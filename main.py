@@ -7,13 +7,18 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 
 
-# Data Set: https://archive.ics.uci.edu/dataset/518/speaker+accent+recognition
+# Other potential Data Set: https://archive.ics.uci.edu/dataset/518/speaker+accent+recognition
 # Other potential data set: https://accent.gmu.edu/
+# Since I will be focusing more on home ai systems, https://github.com/alexa/massive will be a better fit 
 
 
 def main():
     # Step One: Use Data Set
-    print("Hello, World")
+    import pandas as pd 
+    # Convert the json file to a dataframe and check columns and first few rows
+    df = pd.read_json("1.0/data/en-US.jsonl", lines=True)
+    print(df.columns)
+    print(df.head())
     
 
     # Step Two: Explore different features (x) and samples per accent
