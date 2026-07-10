@@ -1,7 +1,7 @@
 # Evaluating Algorithmic Bias in Voice AI
 
 ## Hypothesis 
-Given a set of voice features, the model predicts the speaker's accent. We then analyze whether the model performs less accurately for certain accents, reflecting the kind of bias seen in smart home devices.
+Given a set of text-based user commands, a Natural Language Understanding (NLU) model will exhibit significant performance disparities when predicting user intent across different regional language locales, reflecting biases embedded in commercial smart-speaker systems particularly focusing on Alexa.
 
 
 ## Methods Used
