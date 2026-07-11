@@ -4,8 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression 
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.naive_bayes import MultinomialNB
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.linear_model import LinearRegression
@@ -59,14 +58,14 @@ def main():
     X_test_vec = vectorizer.transform(X_test)
     
     # Step Three: Train a text classifier on utterances
-    model = LogisticRegression(max_iter=200)
+    model = MultinomialNB(alpha=1.0)    # Use a multinomial Naive Bayes classsifier for text classification and evaluate if best classifer for this
     model.fit(X_train_vec, y_train)
     
     print("STEP THREE")
     y_pred = model.predict(X_test_vec)
     accuracy = accuracy_score(y_test, y_pred)
 
-    # Accuracy is calculated as 0.281 
+    # Accuracy is calculated as 0.263
     print(f"Classifier trained. Test accuracy: {accuracy:.3f}")
     # Step Four: Evaluate overall accuracy and accuracy by locale-specific groups
 

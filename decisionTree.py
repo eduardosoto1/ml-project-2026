@@ -34,8 +34,9 @@ def main():
     print(df.columns)
     print(df.head())
 
-    # Step Two: Preprocess by reviewing the data 
+    # Step Two: Preprocess and review the data 
     print("STEP TWO")
+    # Check structure of dataset and learn more about what I am doing
     df.info()
     df.describe()
     print(df.shape)
@@ -57,7 +58,10 @@ def main():
     X_test_vec = vectorizer.transform(X_test)
     
     # Step Three: Train a text classifier on utterances
+
+    # Use a Decision Tree Classifier instead of Logisitic Regression to test which is better
     model = DecisionTreeClassifier()
+    # train model on training data
     model.fit(X_train_vec, y_train)
     
     print("STEP THREE")
